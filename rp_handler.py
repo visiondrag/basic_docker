@@ -25,8 +25,8 @@ def handler(event):
         from code.func import check_run
         b = check_run()
         return a, b
-    except:    
-        return False, a
+    except Exception as e:    
+        return str(e), a
 
 if __name__ == '__main__':
     runpod.serverless.start({'handler': handler })
